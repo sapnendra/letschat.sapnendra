@@ -32,7 +32,7 @@ const io = new Server(expressServer, {
 });
 
 io.on("connection", (socket) => {
-  console.log(`New user ${socket.id} connected`);
+  // console.log(`New user ${socket.id} connected`);
 
   socket.on("enterRoom", ({ name, room }) => {
     const prevRoom = getUser(socket.id)?.room;
@@ -93,7 +93,7 @@ io.on("connection", (socket) => {
       });
     }
 
-    console.log(`User ${socket.id} disconnected`);
+    // console.log(`User ${socket.id} disconnected`);
   });
 
   socket.on("message", ({ name, text }) => {
