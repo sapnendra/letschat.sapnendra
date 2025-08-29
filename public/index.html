@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>I am vini - let's chat</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <header>
+          <form class="form-join" autocomplete="off">
+            <input
+              type="text"
+              id="name"
+              placeholder="Enter your name"
+              maxlength="10"
+              size="5"
+              required
+            />
+            <select name="Chat Room" id="room">
+              <option value="" disabled selected>Select a room</option>
+              <option value="Red">Red</option>
+              <option value="Green">Green</option>
+              <option value="Blue">Blue</option>
+            </select>
+            <button type="submit" id="join">Create Room</button>
+          </form>
+        </header>
+
+        <div class="app">
+          <ul class="chat-display"></ul>
+        </div>
+        <div class="info">
+          <p class="user-list">Users</p>
+          <p class="room-list">Room</p>
+          <p class="activity">Activity</p>
+        </div>
+
+        <div class="send">
+          <form class="form-msg" autocomplete="off">
+            <input
+              type="text"
+              placeholder="Type your message here..."
+              id="message"
+              required
+            />
+            <button type="submit" id="send-btn">Send</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"
+      integrity="sha512-8BHxHDLsOHx+flIrQ0DrZcea7MkHqRU5GbTHmbdzMRnAaoCIkZ97PqZcXJkKZckMMhqfoeaJE+DNUVuyoQsO3Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script defer src="app.js"></script>
+  </body>
+</html>

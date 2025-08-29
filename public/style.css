@@ -1,0 +1,235 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  min-height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  background: linear-gradient(to bottom, #8f8f8f, #fdfdfd, #8f8f8f);
+}
+
+.container {
+    min-height: 500px;
+    min-width: 400px;
+    background: #1b1b1b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 12px;
+    padding: 30px;
+}
+
+
+header form {
+    width: 50vw;
+    height: 50px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 5px;
+    background: #00542f;
+}
+
+header input {
+    width: 60%;
+    height: 30px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    padding: 0 10px;
+    font-size: 0.9rem;
+    background: #ebebeb;
+}
+
+header select {
+    width: 20%;
+    height: 30px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    padding: 0 10px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    background: #ebebeb;
+}
+
+header button {
+    width: 20%;
+    height: 30px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    padding: 0 10px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    background: #ebebeb;
+}
+
+.app {
+    border: 2px solid #707070;
+    height: 40vh;
+    width: 50vw;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: rgba(0, 30, 14, 0.726);
+    background-image: url(https://static.whatsapp.net/rsrc.php/v4/y1/r/m5BEg2K4OR4.png);
+    background-size: cover;
+    background-position: center;
+    overflow: auto;
+}
+
+.app::-webkit-scrollbar {
+    display: none;
+}
+
+.chat-display {
+    list-style: none;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 5px;
+    margin: 1rem auto;
+    padding: 0;
+    display: flex;
+    flex-flow: column;
+    justify-content: left;
+    overflow: auto;
+    flex-grow: 1;
+}
+
+.post {
+    background: #eeeeee;
+    border-radius: 10px;
+    margin: 0.5rem;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.post--left {
+    width: 60%;
+    align-self: flex-end;
+}
+
+.post--right {
+    width: 60%;
+    align-self: flex-start;
+}
+
+.post__header {
+    color: #fff;
+    padding: 0.25rem 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.post__header--user {
+    background: #007140;
+}
+
+.post__header--reply {
+    background: #1e1e1e;
+}
+
+.post__header--name {
+    font-weight: bold;
+}
+
+.post__header--time {
+    font-size: 0.8rem;
+}
+
+.post__text {
+    margin-top: 5px;
+    color: #333;
+    padding: 0.25rem 0.5rem;
+}
+
+.info {
+    height: 5vh;
+    width: 50vw;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background: #d0d0d0;
+    color: #565656;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    overflow: auto;
+}
+
+.info::-webkit-scrollbar {
+    display: none;
+}
+
+.user-list,
+.room-list,
+.activity {
+    font-size: 0.7rem;
+    text-align: center;
+    width: 33%;
+}
+
+.send {
+    height: 50px;
+    width: 50vw;
+    border-radius: 5px;
+}
+
+.form-msg {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#message {
+    height: 100%;
+    width: 75%;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    background: #ebebeb;
+}
+
+#message:focus {
+    outline: none;
+}
+
+#send-btn {
+    width: 20%;
+    height: 100%;
+    border: none;
+    border-radius: 5px;
+    background: #007140;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+#send-btn:hover {
+    transform: translateY(-2px);
+    background: #004929;
+}
