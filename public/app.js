@@ -1,8 +1,4 @@
-const URL =
-  process.env.NODE_ENV === "production"
-    ? "https://your-backend-app.onrender.com"
-    : "http://localhost:3000";
-const socket = io(URL);
+const socket = io("https://letschat-sapnendra.onrender.com");
 
 const msgInput = document.querySelector("#message");
 const nameInput = document.querySelector("#name");
