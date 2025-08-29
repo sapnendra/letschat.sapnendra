@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>I am vini - let's chat</title>
+    <link rel="shortcut icon" href="./image/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <main>
@@ -20,12 +25,12 @@
               required
             />
             <select name="Chat Room" id="room">
-              <option value="" disabled selected>Select a room</option>
-              <option value="Red">Red</option>
-              <option value="Green">Green</option>
-              <option value="Blue">Blue</option>
+              <option value="" disabled selected>Chat Room</option>
+              <option value="Work">Work</option>
+              <option value="Fun">Fun</option>
+              <option value="Random Talk">Random Talk</option>
             </select>
-            <button type="submit" id="join">Create Room</button>
+            <button type="submit" id="join"><i class="ri-add-line"></i></button>
           </form>
         </header>
 
@@ -46,10 +51,15 @@
               id="message"
               required
             />
-            <button type="submit" id="send-btn">Send</button>
+            <button type="submit" id="send-btn"><i class="ri-send-plane-2-fill"></i></button>
           </form>
         </div>
+        <footer>
+          <p>Designed and managed by <a href="https://github.com/sapnendra">sapnendra</a></p>
+          <p>&copy; copyright 2025 | <a href="https://github.com/sapnendra">vini.app</a></p>
+        </footer>
       </div>
+
     </main>
 
     <script

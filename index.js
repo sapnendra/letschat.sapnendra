@@ -77,7 +77,7 @@ io.on("connection", (socket) => {
 
   socket.on("disconnect", () => {
     const user = getUser(socket.id);
-    userLeaveApp(socket.io);
+    userLeaveApp(socket.id);
     if (user) {
       io.to(user.room).emit(
         "message",

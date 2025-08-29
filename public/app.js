@@ -1,4 +1,8 @@
-const socket = io("https://letschat-sapnendra.onrender.com");
+const socket = io(
+  window.location.hostname === "localhost"
+    ? "http://localhost:3000"
+    : window.location.origin
+);
 
 const msgInput = document.querySelector("#message");
 const nameInput = document.querySelector("#name");
@@ -72,7 +76,7 @@ socket.on("activity", (name) => {
   clearTimeout(activityTimer);
   activityTimer = setTimeout(() => {
     activity.textContent = "";
-  }, 3000);
+  }, 2000);
 });
 
 socket.on("userList", ({ users }) => {
@@ -86,7 +90,7 @@ socket.on("roomList", ({ rooms }) => {
 const showUsers = (users) => {
   userList.textContent = "";
   if (users) {
-    userList.innerHTML = `<em>Users in ${chatRoom.value} chat room: </em>`;
+    userList.innerHTML = `<em>Users in "${chatRoom.value}" chat room: </em>`;
     users.forEach((user, idx) => {
       userList.textContent += `${user.name}`;
       if (users.length > 1 && idx !== users.length - 1) {
@@ -99,7 +103,7 @@ const showUsers = (users) => {
 const showRooms = (rooms) => {
   roomList.textContent = "";
   if (rooms) {
-    roomList.innerHTML = `<em>Active Rooms</em>`;
+    roomList.innerHTML = `<em>Active Rooms: </em>`;
     rooms.forEach((room, idx) => {
       roomList.textContent += `${room}`;
       if (rooms.length > 1 && idx !== rooms.length - 1) {
