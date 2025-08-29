@@ -1,4 +1,8 @@
-const socket = io("http://localhost:3000");
+const URL =
+  process.env.NODE_ENV === "production"
+    ? "https://your-backend-app.onrender.com"
+    : "http://localhost:3000";
+const socket = io(URL);
 
 const msgInput = document.querySelector("#message");
 const nameInput = document.querySelector("#name");
@@ -50,7 +54,9 @@ socket.on("message", (data) => {
     li.classList = "post post--right";
   }
   if (name !== "Admin") {
-    li.innerHTML = `<div class="post__header ${name === nameInput.value ? "post__header--user" : "post__header--reply"}">
+    li.innerHTML = `<div class="post__header ${
+      name === nameInput.value ? "post__header--user" : "post__header--reply"
+    }">
                       <span class="post__header--name">${name}</span>
                       <span class="post__header--time">${time}</span>
                     </div>
@@ -73,36 +79,36 @@ socket.on("activity", (name) => {
   }, 3000);
 });
 
-socket.on("userList", ({users}) => {
+socket.on("userList", ({ users }) => {
   showUsers(users);
 });
 
-socket.on("roomList", ({rooms}) => {
+socket.on("roomList", ({ rooms }) => {
   showRooms(rooms);
 });
 
 const showUsers = (users) => {
   userList.textContent = "";
-  if(users) {
+  if (users) {
     userList.innerHTML = `<em>Users in ${chatRoom.value} chat room: </em>`;
     users.forEach((user, idx) => {
       userList.textContent += `${user.name}`;
-      if(users.length > 1 && idx !== users.length - 1) {
+      if (users.length > 1 && idx !== users.length - 1) {
         userList.textContent += ", ";
       }
     });
   }
-}
+};
 
 const showRooms = (rooms) => {
   roomList.textContent = "";
-  if(rooms) {
+  if (rooms) {
     roomList.innerHTML = `<em>Active Rooms</em>`;
     rooms.forEach((room, idx) => {
       roomList.textContent += `${room}`;
-      if(rooms.length > 1 && idx !== rooms.length - 1) {
+      if (rooms.length > 1 && idx !== rooms.length - 1) {
         roomList.textContent += ",";
       }
     });
   }
-}
+};
